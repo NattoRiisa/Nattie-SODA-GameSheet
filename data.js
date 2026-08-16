@@ -2,7 +2,7 @@
 
 //  Sheet data - Main info
 const character = {
-    name: "straight bullshit",
+    name: "Nattie",
     title: "Enlightened Artist",
     level: 9,
 
