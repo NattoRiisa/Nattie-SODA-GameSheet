@@ -120,7 +120,27 @@ h1, h2, h3, p {
     align-items: baseline;
 
     margin-bottom: $spacing-lg;
+
 }
+.section-header h2 {
+    border: $border-width solid;
+    border-color: $border-color;
+    background-color: rgba(184, 114, 114, 0.527);
+    padding: $spacing-xs $spacing-sm;
+}
+
+.skill {
+    padding: $spacing-md;
+}
+
+.skill + .skill {
+    margin-top: $spacing-md;
+}
+
+.bane + .bane {
+    margin-top: $spacing-md;
+}
+
 
 .creation {
     padding: $spacing-md;
@@ -128,6 +148,17 @@ h1, h2, h3, p {
 
 .creation + .creation {
     margin-top: $spacing-md;
+}
+
+.abilities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-color: $border-color;
+}
+
+.banes {
+    border-left: $border-width solid;
+    border-color: $border-color;
 }
 
 // Responsive
@@ -152,5 +183,14 @@ h1, h2, h3, p {
         border-left: none;
         border-top: $border-width solid;
         border-color: $border-color;
+    }
+    .abilities {
+    grid-template-columns: 1fr;
+    }
+
+    .banes {
+    border-left: none;
+    border-top: $border-width solid;
+    border-color: $border-color;
     }
 }

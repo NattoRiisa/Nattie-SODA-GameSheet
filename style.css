@@ -94,12 +94,42 @@ h1, h2, h3, p {
   margin-bottom: 1.5rem;
 }
 
+.section-header h2 {
+  border: 2px solid;
+  border-color: #d48484;
+  background-color: rgba(184, 114, 114, 0.527);
+  padding: 0.25rem 0.5rem;
+}
+
+.skill {
+  padding: 1rem;
+}
+
+.skill + .skill {
+  margin-top: 1rem;
+}
+
+.bane + .bane {
+  margin-top: 1rem;
+}
+
 .creation {
   padding: 1rem;
 }
 
 .creation + .creation {
   margin-top: 1rem;
+}
+
+.abilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-color: #d48484;
+}
+
+.banes {
+  border-left: 2px solid;
+  border-color: #d48484;
 }
 
 @media (max-width: 600px) {
@@ -115,6 +145,14 @@ h1, h2, h3, p {
     grid-template-columns: 1fr;
   }
   .attribute-group + .attribute-group {
+    border-left: none;
+    border-top: 2px solid;
+    border-color: #d48484;
+  }
+  .abilities {
+    grid-template-columns: 1fr;
+  }
+  .banes {
     border-left: none;
     border-top: 2px solid;
     border-color: #d48484;

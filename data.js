@@ -31,20 +31,47 @@ const character = {
 
 //  Sheet data - Creations
 const creations = [
-
+    {
+        name: "Example Creation",
+        type: "Bane",
+        cost: "+1",
+        description: "x happens.",
+        used: true
+    },
+    {
+        name: "Example Creation",
+        type: "Bane",
+        cost: "+1",
+        description: "x happens.",
+        used: true
+    }
 ]
 
 //  Sheet data - Skills/Banes
 const abilities = [
     {
-        name: "Example Bane",
-        type: "Bane"
+        name: "butt slapping",
+        type: "Skill",
+        cost: "-1",
+        description: "it slaps your butt.",
+        used: true
     },
+
     {
-        name: "Quick Attack",
-        type: "Skill"
+        name: "powerful ii",
+        type: "Skill",
+        cost: "-20",
+        description: "increase 2 atk.",
+        used: true
+    },
+
+    {
+        name: "Example Bane",
+        type: "Bane",
+        cost: "+1",
+        description: "Something bad happens."
     }
-]
+];
 
 const skills = abilities.filter(ability => ability.type === "Skill");
 const banes = abilities.filter(ability => ability.type === "Bane");
@@ -94,3 +121,28 @@ document.getElementById("basic-attack-description").textContent =
 
 document.getElementById("basic-attack-damage").textContent =
     `(${character.atk} + 2) [${character.dice}]`;
+
+const skillsContainer = document.getElementById("skills");
+const baneContainer = document.getElementById("banes");
+
+skills.forEach(skill => {
+
+    const skillElement = document.createElement("div");
+
+    skillElement.innerHTML = `
+        <h3>${skill.name} <span>(${skill.cost} TP)</span></h3>
+        <p>${skill.description}</p>
+    `;
+    skillsContainer.appendChild(skillElement);
+});
+
+banes.forEach(bane => {
+
+    const baneElement = document.createElement("div");
+
+    baneElement.innerHTML = `
+        <h3>${bane.name} <span>(${bane.cost} IM)</span></h3>
+        <p>${bane.description}</p>
+    `;
+    baneContainer.appendChild(baneElement);
+});
